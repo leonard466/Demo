@@ -1,0 +1,12 @@
+Port In Use:
+http://53.125.54.35:9999/stats_10?&type=counters&format=value&value=CT/Licensed/Ports
+
+Total Licensed Port:
+http://53.125.54.35:9999/stats_10?&type=counters&format=value&value=CT/Licensed/Licensed
+
+Sample Code:
+HttpWebRequest obj = (HttpWebRequest)WebRequest.Create(uRL_Tot_licence);
+obj.Timeout = 5000;
+HttpWebResponse httpWebResponse = (HttpWebResponse)obj.GetResponse();
+StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream());
+string text = streamReader.ReadToEnd();
